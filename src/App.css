@@ -1,0 +1,52 @@
+body {
+}
+
+select {
+  display: block;
+  /* width: 100%; */
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+  /* Remove default arrow */
+  background-color: #fff;
+}
+
+.filter-container {
+  display: flex;
+  padding: 1em;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-container > div {
+  margin: 0.5em 1em;
+  min-width: min-content;
+}
+
+.react-daterange-picker__wrapper {
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.react-calendar {
+  border-radius: 6px;
+}
+
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  width: 100%;
+  justify-content: center;
+}
+
+.chart-container > div {
+  min-width: 600px;
+  border: 1px solid rgb(133, 124, 124);
+  padding: 0.5em;
+  border-radius: 6px;
+}
