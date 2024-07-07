@@ -11,6 +11,7 @@ const Dashboard = () => {
   const [lineChartData, setLineChartData] = useState([]);
   const [currentBar, setCurrentBar] = useState('A');
 
+  // Mock API call to get the data and set in the state
   React.useEffect(() => {
     fetch('/api/dashboard')
       .then((res) => res.json())
@@ -23,6 +24,7 @@ const Dashboard = () => {
   }, []);
 
   useEffect(() => {
+    // Bar chart should be updated when a filter is applied
     if (chartFilteredData) {
       //   console.log('chart data-', chartFilteredData);
       const barChartData = getBarChartData(chartFilteredData);
@@ -31,6 +33,7 @@ const Dashboard = () => {
   }, [chartFilteredData]);
 
   useEffect(() => {
+    // Update line chart according to the bar chart data/selected bar
     if (currentBar && chartFilteredData) {
       const getLineChartData = () => {
         const data = [];
@@ -50,6 +53,7 @@ const Dashboard = () => {
   };
 
   if (!chartFilteredData) {
+    // TODO - Add a loading component
     return <>Loading</>;
   }
   // console.log('line chart ---points -', lineChartData);

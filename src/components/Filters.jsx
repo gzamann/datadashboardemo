@@ -61,6 +61,7 @@ const Filters = ({ chartDataRaw, setChartFilteredData, setBarChartData }) => {
   }, []);
 
   useEffect(() => {
+    // Update user cookies and the chart data whenever a filter is applied
     updateCookies(dateRange, ageFilter, genderFilter);
     setFilteredData(chartDataRaw, dateRange, ageFilter, genderFilter);
   }, [dateRange, ageFilter, genderFilter]);
@@ -90,18 +91,21 @@ const Filters = ({ chartDataRaw, setChartFilteredData, setBarChartData }) => {
     // console.log('allfiltered --', allFilteredData);
   };
 
+  // when date selection is updated
   const handleDateRangeChange = (params) => {
+    // When date is cleared
     if (!params) {
       setDateRange(null);
       removeUrlParam('dateRange');
       return;
     }
     const dateRange = params;
-    console.log('handle date change', dateRange);
+    // console.log('handle date change', dateRange);
     setDateRange(dateRange);
     updateUrlParam('dateRange', JSON.stringify(dateRange));
   };
 
+  // when user selects from any dropdown
   const handleSelectChange = (selectedOption, type) => {
     updateCookies();
     if (type === SELECT_FILTER_TYPES.AGE) {
@@ -121,7 +125,7 @@ const Filters = ({ chartDataRaw, setChartFilteredData, setBarChartData }) => {
       );
     }
   };
-  console.log('dateRange-----======', dateRange);
+
   return (
     <>
       <div className="filter-container">

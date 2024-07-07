@@ -118,6 +118,7 @@ export const getBarChartData = (chartData) => {
   return results;
 };
 
+// cookie updater when a filter is updated
 export const updateCookies = (dates, age, gender) => {
   if (dates && dates.length) {
     Cookies.set('dates', JSON.stringify(dates), { expires: 1 });
