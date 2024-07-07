@@ -66,6 +66,7 @@ const Dashboard = () => {
         </div>
         <div className="chart-container">
           <div>
+            <h3>Bar Chart</h3>
             <Chart
               onClickHandler={onClickBar}
               chartConfig={getChartConfig(
@@ -77,13 +78,16 @@ const Dashboard = () => {
           </div>
           <div>
             {lineChartData ? (
-              <Chart
-                chartConfig={getChartConfig(
-                  lineChartData,
-                  chartFilteredData.map((dataset) => dataset.Day),
-                  'line'
-                )}
-              />
+              <>
+                <h3>Line Chart</h3>
+                <Chart
+                  chartConfig={getChartConfig(
+                    lineChartData,
+                    chartFilteredData.map((dataset) => dataset.Day),
+                    'line'
+                  )}
+                />
+              </>
             ) : (
               <>Loading</>
             )}

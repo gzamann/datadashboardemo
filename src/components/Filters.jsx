@@ -33,7 +33,7 @@ const Filters = ({ chartDataRaw, setChartFilteredData, setBarChartData }) => {
       const gender = getUrlParam('gender');
 
       if (dateRange) {
-        setDateRange(dateRange);
+        setDateRange(dateRange.map((date) => new Date(date)));
       }
       if (age) {
         setAgeFilter(age);
@@ -47,7 +47,10 @@ const Filters = ({ chartDataRaw, setChartFilteredData, setBarChartData }) => {
 
     // check for user cookies and set in the state
     if (Cookies.get('dates')) {
-      setDateRange(Cookies.get('dates'));
+      const cookieDates = JSON.parse(Cookies.get('dates')) || [];
+      // console.log('cookie -', cookieDates);
+      if (cookieDates && cookieDates.length)
+        setDateRange(cookieDates.map((date) => new Date(date)));
     }
     if (Cookies.get('age')) {
       setAgeFilter(Cookies.get('age'));
@@ -118,7 +121,7 @@ const Filters = ({ chartDataRaw, setChartFilteredData, setBarChartData }) => {
       );
     }
   };
-
+  console.log('dateRange-----======', dateRange);
   return (
     <>
       <div className="filter-container">

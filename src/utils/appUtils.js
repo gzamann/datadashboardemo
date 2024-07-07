@@ -120,7 +120,7 @@ export const getBarChartData = (chartData) => {
 
 export const updateCookies = (dates, age, gender) => {
   if (dates && dates.length) {
-    Cookies.set('dates', dates, { expires: 1 });
+    Cookies.set('dates', JSON.stringify(dates), { expires: 1 });
   } else {
     Cookies.remove('dates');
   }
