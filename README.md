@@ -1,27 +1,40 @@
 # About
-App is initialized with a simple create-react-app boilerplate.
-## Component structure
-There are two directories created for components
-1. src/components - Contains the components used in the UI (Chart.jsx, Filter.jsx)
-2. src/pages - Contains individual pages and their layout (Dashboard)
 
-#### About Components
-  **Chart** - This component is a wrapper for the echarts. Echarts can be used through our wrapper component so that we have a standard way to use Echarts across the project and all the configurations, modification etc are applied here when required.
+This is a simple React application initialized with create-react-app.
+
+## Component Structure
+
+### Components Directory (`src/components`)
+
+- **Chart.jsx**: A reusable component that wraps around Echarts for consistent chart display and configuration across the application.
   
-  **Filters** - This component contains the date, age and gender filters. It handles the states for all the filter components and the logic to handle any updates. Upon update, this component generates filtered data and updates to the parent component which is our Dashboard.
+- **Filter.jsx**: Contains date, age, and gender filters. Manages filter states and logic for updating data displayed on the `Dashboard`.
 
-## Data
-- The API data is fetched in the page level with useEffect hook (Dashboard.jsx)
-- Local states for data are maintained at the page level (Dashboard.jsx)
-- API fetching and data storing is handled within the component since state management is not in place for the demo app
+### Pages Directory (`src/pages`)
+
+- **Dashboard.jsx**: Integrates charts and filters to display relevant data in a dashboard layout.
+
+## About Components
+
+### Chart Component
+
+The `Chart` component simplifies the integration of Echarts throughout the app. It provides a standardized approach for configuring and displaying various types of charts.
+
+### Filters Component
+
+The `Filters` component handles user interactions with date, age, and gender filters. It manages state changes and updates data displayed on the `Dashboard` based on user selections.
+
+## Data Handling
+
+Data fetching from APIs is managed within the `Dashboard.jsx` component using the `useEffect` hook. Local state management within `Dashboard.jsx` ensures efficient data updates and rendering.
 
 ## Constants and Utilities
-Constants and utilities are stored in **src/utils**. These can be imported and used through the app.
 
-**constants.js**  - Contains all the app constants such as Filter labels and options.
+Constants and utility functions are stored in `src/utils`.
 
-**appUtils.js** - Contains all the utility functions for that are used in the app and these can be re-used in further development. Currently stored in a single file, but we would store utils by modules and common when the app grows.
-
+- **constants.js**: Houses application-wide constants such as filter labels and options for consistent use across components.
+  
+- **appUtils.js**: Contains utility functions that facilitate common tasks across the application. As the app grows, utilities will be organized by modules to maintain scalability and clarity.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Getting Started with Create React App
