@@ -1,3 +1,29 @@
+# About
+App is initialized with a simple create-react-app boilerplate.
+## Component structure
+There are two directories created for components
+1. src/components - Contains the components used in the UI (Chart.jsx, Filter.jsx)
+2. src/pages - Contains individual pages and their layout (Dashboard)
+
+#### About Components
+  **Chart** - This component is a wrapper for the echarts. Echarts can be used through our wrapper component so that we have a standard way to use Echarts across the project and all the configurations, modification etc are applied here when required.
+  
+  **Filters** - This component contains the date, age and gender filters. It handles the states for all the filter components and the logic to handle any updates. Upon update, this component generates filtered data and updates to the parent component which is our Dashboard.
+
+## Data
+- The API data is fetched in the page level with useEffect hook (Dashboard.jsx)
+- Local states for data are maintained at the page level (Dashboard.jsx)
+- API fetching and data storing is handled within the component since state management is not in place for the demo app
+
+## Constants and Utilities
+Constants and utilities are stored in **src/utils**. These can be imported and used through the app.
+
+**constants.js**  - Contains all the app constants such as Filter labels and options.
+
+**appUtils.js** - Contains all the utility functions for that are used in the app and these can be re-used in further development. Currently stored in a single file, but we would store utils by modules and common when the app grows.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
