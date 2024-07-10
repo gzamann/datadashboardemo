@@ -1,9 +1,8 @@
 import './App.css';
 import Dashboard from './pages/Dashboard';
+import server from './config/server';
 
-import server from './server'
-
-server()
+server();
 
 function App() {
   return (
