@@ -1,3 +1,42 @@
+# About
+
+This is a simple React application initialized with create-react-app.
+
+## Component Structure
+
+### Components Directory (`src/components`)
+
+- **Chart.jsx**: A reusable component that wraps around Echarts for consistent chart display and configuration across the application.
+  
+- **Filter.jsx**: Contains date, age, and gender filters. Manages filter states and logic for updating data displayed on the `Dashboard`.
+
+### Pages Directory (`src/pages`)
+
+- **Dashboard.jsx**: Integrates charts and filters to display relevant data in a dashboard layout.
+
+## About Components
+
+### Chart Component
+
+The `Chart` component simplifies the integration of Echarts throughout the app. It provides a standardized approach for configuring and displaying various types of charts.
+
+### Filters Component
+
+The `Filters` component handles user interactions with date, age, and gender filters. It manages state changes and updates data displayed on the `Dashboard` based on user selections.
+
+## Data Handling
+
+Data fetching from APIs is managed within the `Dashboard.jsx` component using the `useEffect` hook. Local state management within `Dashboard.jsx` ensures efficient data updates and rendering.
+
+## Constants and Utilities
+
+Constants and utility functions are stored in `src/utils`.
+
+- **constants.js**: Houses application-wide constants such as filter labels and options for consistent use across components.
+  
+- **appUtils.js**: Contains utility functions that facilitate common tasks across the application. As the app grows, utilities will be organized by modules to maintain scalability and clarity.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
